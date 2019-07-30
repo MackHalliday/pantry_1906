@@ -32,12 +32,24 @@ class PantryTest < MiniTest::Test
   def test_it_can_be_restocked
     @pantry.restock(@cheese, 5)
     @pantry.restock(@cheese, 10)
-
     assert_equal 15, @pantry.stock_check(@cheese)
   end
 
   def test_enought_ingredients_for_recipe
+    @pantry.restock(@cheese, 5)
+    @pantry.restock(@cheese, 10)
 
     refute @pantry.enough_ingredients_for?(@mac_and_cheese)
-  end 
+
+    @pantry.restock(@cheese, 5)
+    @pantry.restock(@cheese, 10)
+    @pantry.restock(@mac, 7)
+    refute @pantry.enough_ingredients_for?(@mac_and_cheese)
+
+    @pantry.restock(@cheese, 5)
+    @pantry.restock(@cheese, 10)
+    @pantry.restock(@mac, 7)
+    @pantry.restock(@mac, 1)
+    assert @pantry.enough_ingredients_for?(@mac_and_cheese)
+  end
 end
