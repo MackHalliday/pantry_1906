@@ -25,4 +25,11 @@ class Recipe
       ingredient.calories * amount
     end
   end
+
+  def name_amount_of_ingredients
+    new_hash = Hash.new
+    @ingredients_required.each do |ingredient|
+      ingredient[name] = amount
+    end 
+  end
 end

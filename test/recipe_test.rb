@@ -52,4 +52,9 @@ class RecipeTest < MiniTest::Test
 
    assert_equal 440, @mac_and_cheese.total_calories
   end
+
+  def test_list_of_ingredients_with_amount
+
+    assert_equal expected, @mac_and_cheese.name_amount_of_ingredients
+  end
 end
