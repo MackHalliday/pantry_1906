@@ -26,15 +26,6 @@ class Recipe
     end
   end
 
-  # def name_amount_of_ingredients
-  #   name_amount = Hash.new
-  #
-  #   ingredients.each do |ingredient|
-  #     name_amount[ingredient.name] = amount_required(ingredient)
-  #   end
-  #   name_amount
-  # end
-
   def ingredient_hash
 
     @ingredients_required.map do |ingredient, amount|
