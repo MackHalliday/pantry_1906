@@ -9,4 +9,13 @@ class Pantry
   def stock_check(ingredient)
     @stock[ingredient]
   end
+
+  def restock(ingredient, amount)
+    @stock[ingredient] += amount
+  end
+
+  def enough_ingredients_for?(recipe)
+    @stock.all? do |ingredient, amount|
+      @recipe.
+  end
 end
