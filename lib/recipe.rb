@@ -26,11 +26,18 @@ class Recipe
     end
   end
 
-  def each_ingredient_amount
+  def total_cal_by_ingredient(ingredient)
+    ingredient.calories * amount_required(ingredient)
+  end
 
-    @ingredients_required.map do |ingredient, amount|
-      {ingredient: ingredient.name,
-       amount: amount.to_s + " " + ingredient.unit}
-    end
+  def each_ingredient_amount
+   # by_calories = @ingredients_required.group_by do |ingredient, amount|
+   #   total_cal_by_ingredient(ingredient)
+   #  end
+
+  ingredient_list = @ingredients_required.map do |ingredient, amount|
+    {ingredient: ingredient.name,
+     amount: amount.to_s + " " + ingredient.unit}
+   end
   end
 end
