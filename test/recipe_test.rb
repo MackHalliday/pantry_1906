@@ -54,6 +54,9 @@ class RecipeTest < MiniTest::Test
   end
 
   def test_list_of_ingredients_with_amount
+    @mac_and_cheese.add_ingredient(@cheese, 2)
+    @mac_and_cheese.add_ingredient(@mac, 8)
+    expected = {"Cheese"=>2, "Macaroni"=>8}
 
     assert_equal expected, @mac_and_cheese.name_amount_of_ingredients
   end

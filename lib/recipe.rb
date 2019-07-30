@@ -28,8 +28,11 @@ class Recipe
 
   def name_amount_of_ingredients
     new_hash = Hash.new
-    @ingredients_required.each do |ingredient|
-      ingredient[name] = amount
-    end 
+
+
+    ingredients.each do |ingredient|
+      new_hash[ingredient.name] = amount_required(ingredient)
+    end
+    new_hash
   end
 end
