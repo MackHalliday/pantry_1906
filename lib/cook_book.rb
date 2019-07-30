@@ -12,7 +12,7 @@ class CookBook
   def summary
     @recipes.map do |recipe|
       {name: recipe.name,
-       details: {ingredients: recipe.ingredient_hash,
+       details: {ingredients: recipe.each_ingredient_amount,
        total_calories: recipe.total_calories}}
      end
   end

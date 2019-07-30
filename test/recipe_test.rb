@@ -59,6 +59,6 @@ class RecipeTest < MiniTest::Test
 
     expected = {:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}
 
-    assert_equal expected, @mac_and_cheese.ingredient_hash
+    assert_equal expected, @mac_and_cheese.each_ingredient_amount
   end
 end

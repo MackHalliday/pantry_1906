@@ -26,7 +26,7 @@ class Recipe
     end
   end
 
-  def ingredient_hash
+  def each_ingredient_amount
 
     @ingredients_required.map do |ingredient, amount|
       {ingredient: ingredient.name,
